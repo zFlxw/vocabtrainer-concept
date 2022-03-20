@@ -1,0 +1,116 @@
+$background: #f6f8fa;
+$main_blue: #0077b6;
+$main_grey: #495057;
+$second_grey: #ced4da;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 18px;
+  font-family: 'Poppins',sans-serif;
+}
+
+body {
+  background-color: $background;
+
+  h1 p, h2 p {
+    color: $main_blue;
+    display: inline-flex;
+  }
+}
+
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: $main_grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $second_grey;
+      transition: width .5s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.childs {
+  padding-top: 12.5rem;
+  font-size: 1.75rem;
+  width: 60rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.link-anim {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .15s;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $main_blue;
+    transition: width .3s;
+  }
+
+  &:hover {
+    opacity: .9;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  font-size: 1.25rem;
+  color: $second_grey;
+  text-align: center;
+  width: 100%;
+  height: 2rem;
+  transition: .15s;
+
+  a {
+    text-decoration: none;
+    color: second_grey;
+
+    &:visited, &:active {
+      color: inherit;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $main_grey;
+  }
+}
